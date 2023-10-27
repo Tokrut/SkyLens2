@@ -17,7 +17,7 @@ def input_d(tec_id):
     t0 = float(input())  # curs.fetchall()[0][0]
     bolpolz = 6378.160 + H
     ugspid = float(input())/(bolpolz)#curs.fetchall()[0][0]
-    malpolz = 6356.777+H
+    malpolz = 6356.777 + H
     exentz = 0.0167
     Amplitude = 10001.965
     roz1 = malpolz/(1-exentz**2*sin(B)**2)
