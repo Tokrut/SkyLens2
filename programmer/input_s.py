@@ -1,6 +1,6 @@
 from math import *
-from datatime import datetime
-from datatime import timedelta
+from datetime import datetime
+from datetime import timedelta
 from sqlite3 import *
 
 #connection = connect('testDB2.db')
@@ -25,7 +25,7 @@ def input_d(tec_id):
     nachfiz = asin(y/(x**2+y**2)**0.5)
     chast = ugspid/(2*pi)
     obl = tan(radians(ugolcam)) * H
-def progon(B1,L1,B2,L2,time):
+def progon(B1,L1,B2,L2,B ,L,H, time):
     for t in range(0,86400,60):
         t0 = timedelta(time,t0)%40075.017
         y_s = L+ Amplitude * sin(radians(chast * t0 + nachfiz))
@@ -43,8 +43,23 @@ malpolz = 6356.777 + H
 exentz = 0.0167
 Amplitude = 10001.965
 bolpolz = 6378.160 + H
-input_d(1)
 time = datetime.now()
+#    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(tec_id))
+B1 = float(input())  # 'curs.fetchall()[0][0]'
+#    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(tec_id))
+L1 = float(input())  # 'curs.fetchall()[0][0]'
+#    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(tec_id))
+#    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(tec_id))
+B2 = float(input())  # 'curs.fetchall()[0][0]'
+#    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(tec_id))
+L2 = float(input())  # 'curs.fetchall()[0][0]'
+#    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(tec_id))
 for i in range():
-
-    progon(B1,L1,B2,L2,time)
+    input_d(i)
+    #    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(i))
+    B = float(input())  # 'curs.fetchall()[0][0]'
+    #    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(i))
+    L = float(input())  # 'curs.fetchall()[0][0]'
+    #    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(i))
+    H = float(input())  # 'curs.fetchall()[0][0]'
+    progon(B1,L1,B2,L2,B,L,H,time)
