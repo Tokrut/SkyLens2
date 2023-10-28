@@ -20,6 +20,8 @@ def input_d(tec_id):
     #  curs.execute('SELECT L1 FROM Orders WHERE id = ' + str(tec_id))
     ugspid = float(input())/(bolpolz)#curs.fetchall()[0][0]
     roz1 = malpolz / ( 1 - exentz ** 2 * sin(B) ** 2 )
+    malpolz+=H
+    bolpolz+=H
     x = roz1*cos(radians(B))*cos(radians(L))
     y = roz1*cos(radians(B))*sin(radians(L))
     nachfiz = asin(y/(x**2+y**2)**0.5)
@@ -39,10 +41,10 @@ def progon(B1,L1,B2,L2,B ,L,H, time):
         if (B+obl >= B2 and L+obl >= L2) and (B-obl <= B1 and L-obl <= L1):
             return t
             break
-malpolz = 6356.777 + H
+malpolz = 6356.777
 exentz = 0.0167
 Amplitude = 10001.965
-bolpolz = 6378.160 + H
+bolpolz = 6378.160
 time = datetime.now()
 #    curs.execute('SELECT B1 FROM Orders WHERE id = '+str(tec_id))
 B1 = float(input())  # 'curs.fetchall()[0][0]'
